@@ -1,5 +1,6 @@
 package Java8_programs;
 import java.util.Arrays;
+import java.util.List;
 
 public class TwoArraysEqualOrNotUsingArraysMethod {
     public static void  main(String[] args){
@@ -14,5 +15,12 @@ public class TwoArraysEqualOrNotUsingArraysMethod {
         }else{
             System.out.println("two arrays are not equal");
         }
+
+        List<Integer> list1 = Arrays.asList(4,6,8,3,5,9);
+        List<Integer> list2 = Arrays.asList(4,6,8,3,1,9);
+        boolean containsOrNot = list1.containsAll(list2);
+        System.out.println(containsOrNot);
+
+
     }
 }

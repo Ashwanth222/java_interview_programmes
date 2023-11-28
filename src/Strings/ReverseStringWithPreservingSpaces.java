@@ -1,5 +1,7 @@
 package Strings;
-
+//I Am Not String ---> g ni rtS toNmAI
+//        JAVA JSP ANDROID ---> DIOR DNA PSJAVAJ
+//        1 22 333 4444 55555 ---> 5 55 554 4443 33221
 public class ReverseStringWithPreservingSpaces {
     static void reverseString(String inputString)
     {

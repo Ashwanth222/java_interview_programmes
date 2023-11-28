@@ -1,7 +1,8 @@
 package Strings;
 
 import java.util.Scanner;
-
+//          Input String : Hi hello how are you?
+//          Output String : you? are how hello Hi
 public class ReverseSentence {
     public static String reverseTheSentence(String inputString)
     {

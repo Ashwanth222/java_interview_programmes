@@ -33,5 +33,8 @@ public class ContainsDublicate {
 
         }
 
+      Set<Integer> noDublicates =  integerList.stream().collect(Collectors.toSet());  //method3
+        System.out.println(noDublicates);
+
     }
 }

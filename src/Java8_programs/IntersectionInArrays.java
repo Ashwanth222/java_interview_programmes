@@ -50,7 +50,8 @@ public static void main(String[] args){
            Arrays.stream(inputArray2).boxed().collect(Collectors.toSet()),
                     Arrays.stream(inputArray3).boxed().collect(Collectors.toSet()),
                     Arrays.stream(inputArray4).boxed().collect(Collectors.toSet()))
-            .stream().collect(Collectors.toSet()).stream().flatMap(l -> l.stream().distinct()).collect(Collectors.toSet());
+            .stream().collect(Collectors.toSet())
+            .stream().flatMap(l -> l.stream().distinct()).collect(Collectors.toSet());
     System.out.println(setOfIntegers);
 setOfIntegers.retainAll(Arrays.stream(inputArray1).boxed().collect(Collectors.toSet()));
     System.out.println(setOfIntegers);

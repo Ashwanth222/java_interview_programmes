@@ -18,6 +18,19 @@ public class FindingLCM {
         int lcm = (a * b) / gcd;
 //prints the result
         System.out.printf("The LCM of %d and %d is %d.", a, b, lcm);
+
+        //method 2
+        int res = b>a? a:b;
+        int gcd2 = 0;
+        for(int i =res; i>=1;i--){
+            if(b%i == 0 && a%i == 0){
+                System.out.println(i);
+                gcd2 = i;
+                break;
+            }
+        }
+        int lcm1 = (a*b)/gcd2;
+        System.out.println(lcm1);
     }
 
 }

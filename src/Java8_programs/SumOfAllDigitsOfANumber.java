@@ -13,7 +13,7 @@ public class SumOfAllDigitsOfANumber {
         //method 1
         Integer sumOfDigits = Stream.of(String.valueOf(i).split("")).collect(Collectors.summingInt(Integer::parseInt));
         //method2
-        System.out.println(Arrays.stream(Integer.toString(i).split("")).collect(Collectors.summingInt(Integer::parseInt)));
+        System.out.println((Integer) Arrays.stream(Integer.toString(i).split("")).mapToInt(Integer::parseInt).sum());
 
         System.out.println(sumOfDigits);
     }

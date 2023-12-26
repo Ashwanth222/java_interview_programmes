@@ -11,6 +11,11 @@ public class ProgramToArrangeUniqueElementsAndReturnLastIndex {
         int b = Arrays.stream(arr).boxed().distinct()
                 .min(Comparator.reverseOrder()).get();    //method 2
 
+        Arrays.stream(arr).boxed().distinct()
+                .min(Comparator.reverseOrder()).ifPresent(System.out::println);
+
+        Arrays.stream(arr).distinct()
+                .max().ifPresent(System.out::println);
         System.out.println(a);
         System.out.println(b);
     }

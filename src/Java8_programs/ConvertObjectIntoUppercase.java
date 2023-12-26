@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class ConvertObjectIntoUppercase {
     public static void main(String[] args){
         List<String> strings = Arrays.asList("aa","bb", "cc", "dd");
-        List<String> uppercaseStrings = strings.stream().map(s->s.toUpperCase(Locale.ROOT))
+        List<String> uppercaseStrings = strings.stream().map(String::toUpperCase)
                 .collect(Collectors.toList());
         System.out.println(uppercaseStrings);
     }

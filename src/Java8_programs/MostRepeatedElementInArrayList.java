@@ -12,7 +12,8 @@ import java.util.stream.Collectors;
 public class MostRepeatedElementInArrayList {
     public static void main(String[] args)
     {
-        List<String> listOfStrings = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Pen", "Note Book", "Pencil");
+        List<String> listOfStrings =
+                Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Pen", "Note Book", "Pencil");
 
         Map<String, Long> elementCountMap = listOfStrings.stream()
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));

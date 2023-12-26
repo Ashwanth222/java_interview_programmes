@@ -9,6 +9,7 @@ public class MultiplyThreeToTheElements {
         List<Integer> integerList = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
         integerList.stream().map(i -> i * 3).forEach(System.out::println);
 
+        //method 2
         System.out.println(integerList.stream().map(i -> i * 3).collect(Collectors.toList()));
 
     }

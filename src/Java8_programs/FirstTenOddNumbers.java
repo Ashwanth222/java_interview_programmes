@@ -9,5 +9,10 @@ public class FirstTenOddNumbers {
                 .limit(10)
                 .map(f -> f[0])
                 .forEach(i -> System.out.print(i+" "));
+        System.out.println("");
+        Stream.iterate(new int[] {2, 4}, f -> new int[] {f[1], f[1]+2})
+                .limit(10)
+                .map(f -> f[0])
+                .forEach(i -> System.out.print(i+" "));
     }
 }

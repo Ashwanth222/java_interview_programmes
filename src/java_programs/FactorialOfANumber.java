@@ -8,5 +8,11 @@ public class FactorialOfANumber {
             fact = fact*i;
         }
         System.out.println(fact);
+
+        // int num = 6;
+        //     for(int i = num-1; i>1;i--){
+        //         num = num*i;
+        //     }
+        //     System.out.println(num);
     }
 }

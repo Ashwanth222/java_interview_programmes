@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class MagicNumber {
     public static void main(String[] args){
         String i = "1252";
-        Integer sum = Arrays.stream(i.split("")).mapToInt(e -> Integer.parseInt(e)).boxed()
+        Integer sum = Arrays.stream(i.split("")).mapToInt(Integer::parseInt).boxed()
                 .collect(Collectors.summingInt(Integer::intValue));
         System.out.println(sum);
         Integer sum1 = Arrays.stream(sum.toString().split("")).mapToInt(e -> Integer.parseInt(e)).boxed()

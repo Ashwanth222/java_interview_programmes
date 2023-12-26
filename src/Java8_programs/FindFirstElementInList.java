@@ -11,6 +11,9 @@ public class FindFirstElementInList {
         int firstElementIntType = myList.stream().findFirst().get().intValue();
         System.out.println(firstElementIntType);   //method 2
 
+        boolean PresentOrNot = myList.stream().findFirst().isPresent();
+        System.out.println(PresentOrNot);
+
         myList.stream()
                 .findFirst()
                 .ifPresent(System.out::println);    //method3

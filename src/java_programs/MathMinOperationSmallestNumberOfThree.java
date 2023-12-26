@@ -1,8 +1,7 @@
 package java_programs;
 
 public class MathMinOperationSmallestNumberOfThree {
-    public static void main( String[] args )
-    {/*from   w  w w  .  j  av  a  2s .  c o  m*/
+    public static void main( String[] args ){
         java.util.Scanner input = new java.util.Scanner( System.in );
 
         System.out.print( "Enter to first number: " );

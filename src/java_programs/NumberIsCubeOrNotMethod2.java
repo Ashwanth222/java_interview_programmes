@@ -8,7 +8,6 @@ public class NumberIsCubeOrNotMethod2 {
         System.out.println(n);
         if(n*n*n == num){
             System.out.println("number is a cube" + n);
-
         }else{
               System.out.println("number is not a cube" + n);
         }

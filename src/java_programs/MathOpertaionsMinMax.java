@@ -19,8 +19,11 @@ public class MathOpertaionsMinMax {
         System.out.println(Math.ceil(4.05));  //5
         System.out.println(Math.ceil(4.45));   //5
         System.out.println(Math.ceil(4.85));   //5
-        System.out.println(Math.ceil(3.95));   //4
+        System.out.println(Math.ceil(3.95));   //4  highest value
         System.out.println(Math.ceil(-3.95));  //-3
+        System.out.println(Math.floor(5.67));  //5.0
+        System.out.println(Math.floor(-5.67));  //-6.0  lowest value
         System.out.println(Math.round(Math.sqrt(29.70)));  //5
+        System.out.println(Math.round(Math.cbrt(29.70)));  //3
     }
 }

@@ -11,5 +11,11 @@ public class AddPredixAndSuffix {
         sj.add("skjflk");
         sj.add("uyfyvjb");
         System.out.println(sj);
+
+        StringJoiner sj1 = new StringJoiner(",");
+        sj1.add("abc");
+        sj1.add("def");
+        sj1.add("ghi");
+        System.out.println(sj1);
     }
 }

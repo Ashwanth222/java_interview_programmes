@@ -1,4 +1,4 @@
-package Java8_programs;
+package Leetcode;
 
 import java.util.Arrays;
 

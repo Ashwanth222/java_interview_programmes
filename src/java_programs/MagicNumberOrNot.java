@@ -1,7 +1,11 @@
 package java_programs;
 
 import java.util.Scanner;
-
+//A number is said to be a magic number if the eventual sum of digits of the number is one.
+//Sample Input : 55
+//Then, 5 + 5 = 10, 1 + 0 = 1
+//Sample Output: Hence, 55 is a Magic Number.
+//Similarly, 289 is a Magic Number.
 public class MagicNumberOrNot {
     private static void isMagicNumber(int inputNumber)
     {

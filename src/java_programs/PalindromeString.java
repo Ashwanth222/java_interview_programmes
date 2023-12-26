@@ -21,14 +21,7 @@ public class PalindromeString {
 
             //Step 3
 
-            if(s3.contains(s2))
-            {
-                System.out.println("s2 is a rotated version of s1");
-            }
-            else
-            {
-                System.out.println("s2 is not rotated version of s1");
-            }
+            System.out.println("s2 is a rotated version of s1");
         }
     }
 }

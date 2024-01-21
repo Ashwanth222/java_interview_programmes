@@ -4,7 +4,7 @@ package java_programs;
 // O(n) solution for finding
 // maximum sum of a subarray
 // of size k
-class GFG {
+class SlidingWindowPatternMaximmumSumOfSubArrayOfSizeK {
 
     // Returns maximum sum in
     // a subarray of size k.

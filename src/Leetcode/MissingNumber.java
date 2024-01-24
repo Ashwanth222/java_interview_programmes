@@ -10,6 +10,12 @@ public class MissingNumber {
        // int[] a = {3,0,1};
         int[] a = {1,2,4,6,7,8,3};
         Arrays.sort(a);
+        for(int i = 0; i<a.length-1;i++){
+            if(a[i]+1 != a[i+1]){
+                System.out.println("input number  "+a[i]+1);
+            }
+        }
+        Arrays.sort(a);
        int[] b = Arrays.stream(a).boxed().sorted(Comparator.reverseOrder())
                .toList().stream().mapToInt(e-> e).toArray();
        System.out.println(Arrays.toString(b));

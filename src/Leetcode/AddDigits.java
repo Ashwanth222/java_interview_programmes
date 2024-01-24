@@ -1,5 +1,7 @@
 package Leetcode;
 
+import java.util.Arrays;
+
 public class AddDigits {
     public static void main(String[] args){
         int num = 8769234;
@@ -10,5 +12,11 @@ public class AddDigits {
            num = num/10;
         }
         System.out.println(sum);
+
+        //alternate
+
+        int num1 = 8769234;
+        int summ = Arrays.stream(String.valueOf(num1).split("")).mapToInt(e-> Integer.parseInt(e)).reduce(0,(a, b)-> a+b);
+        System.out.println("sum" + summ);
     }
 }

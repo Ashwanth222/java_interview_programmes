@@ -24,6 +24,6 @@ public class AddBinary {
             carry = value / 2;
 
         }
-System.out.println(sb.reverse());
+        System.out.println(sb.reverse());
     }
 }

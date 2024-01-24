@@ -2,7 +2,7 @@ package java_programs;
 
 import static java.lang.Math.min;
 
-public class MathOpertaionsMinMax {
+public class MathOpertaions {
     public static void main(String[] args)
     {
         int a = 3;
@@ -25,5 +25,9 @@ public class MathOpertaionsMinMax {
         System.out.println(Math.floor(-5.67));  //-6.0  lowest value
         System.out.println(Math.round(Math.sqrt(29.70)));  //5
         System.out.println(Math.round(Math.cbrt(29.70)));  //3
+        int X = 3;
+        System.out.println("The square of " + X + " is " +  Math.pow(X, 2));
+// The square of 3 is 9.0
+
     }
 }

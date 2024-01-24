@@ -1,4 +1,9 @@
 package Leetcode;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 //Example 1:
 //
 //Input: gain = [-5,1,5,0,-7]
@@ -11,22 +16,15 @@ package Leetcode;
 //Explanation: The altitudes are [0,-4,-7,-9,-10,-6,-3,-1]. The highest is 0.
 public class FindTheHighestAltitude {
     public static void main(String[] args){
-        int[] input = {-4,-3,-2,-1,4,3,2};
-        int max = 0;
-        int sum = 0;
-        for (int i = 0; i<input.length;i++){
-            sum = sum +input[i];
-            if(sum>max){
-                max = sum;
-            }
+        //int[] input = {-4,-3,-2,-1,4,3,2};
+        int[] input = {-5,1,5,0,-7};
+        List<Integer> integers = new ArrayList<>();
+        integers.add(0);
+        for(int i = 0; i<input.length;i++) {
+            integers.add(integers.get(i) + input[i]);
         }
-        System.out.println(max);
-        // int sum=0;
-        //        int maxsum=0;
-        //        for(int i=0; i<gain.length; i++){
-        //            sum=gain[i]+sum;
-        //            maxsum=Math.max(maxsum , sum);
-        //        }
-        //        return maxsum;
+        System.out.println("integers: " + integers);
+        Integer highestValue = integers.stream().sorted(Comparator.reverseOrder()).findFirst().get();
+        System.out.println("highestValue: " + highestValue);
     }
 }

@@ -10,6 +10,7 @@ public class FindFirstNonRepeatedCharacterInString {
         Character sb = input.chars()
                 .mapToObj(ch1 -> (char) ch1)
                 .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new,Collectors.counting()))
+                // linked hash map for maintaining insertion order
                 .entrySet()
                 .stream()
                 .filter(f->f.getValue() == 1L)

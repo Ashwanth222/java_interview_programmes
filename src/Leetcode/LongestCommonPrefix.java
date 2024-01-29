@@ -8,21 +8,38 @@ public class LongestCommonPrefix {
     public static void main(String[] args){
         String[] string = {"flower", "flow", "flight" };
         String[] strings = {"flower", "flow", "flight" };
-//        List<String> stringss = Arrays.stream(string)
-//                .sorted((s1, s2) -> s1.length() - s2.length()).toList();
-//        System.out.println(stringss);
-//        List<String> stringsss = Arrays.stream(string)
-//                .sorted().toList();
-//        System.out.println(stringsss);
-//        for(int i = 0; i<stringsss.get(0).length();i++) {
-//
-//            int finalI1 = i;
-//            stringsss.stream().skip(1)
-//                   .filter(l -> l.charAt(finalI1) == stringsss.get(0).charAt(finalI1))
-//                   .forEach(System.out::println);
-//        }
 
+        Arrays.sort(string);
 
+        String first = string[0];
+        String last = string[string.length-1];
+        int g = 0;
+        int index = 0;
+        while (g<first.length() && g< last.length()){
+            if(first.charAt(g) == last.charAt(g)){
+                index ++;
+                g++;
+            }else {
+                break;
+            }
+        }
+        System.out.println(first.substring(0,index));
+
+        //alternate 2
+        StringBuilder ans = new StringBuilder();
+        Arrays.sort(strings);
+        String firstt = string[0];
+        String lastt = string[string.length-1];
+        for(int i =0; i<strings.length;i++) {
+            if(firstt.charAt(i) != lastt.charAt(i)){
+                System.out.println(ans.toString());
+                }else {
+                ans.append(first.charAt(i));
+            }
+        }
+        System.out.println("ans : "+ ans);
+
+            //alternate 3
         String prefix = strings[0];
         for(int i =1; i<strings.length;i++){
             while(strings[i].indexOf(prefix) != 0){
@@ -30,5 +47,7 @@ public class LongestCommonPrefix {
             }
         }
         System.out.println("prefix  : " + prefix);
+
+
     }
 }

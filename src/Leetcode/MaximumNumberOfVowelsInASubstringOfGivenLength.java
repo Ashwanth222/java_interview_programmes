@@ -29,19 +29,61 @@ import java.util.stream.Collectors;
 //Explanation: "lee", "eet" and "ode" contain 2 vowels
 public class MaximumNumberOfVowelsInASubstringOfGivenLength {
     public static void main(String[] args){
-      String  s = "abciiidef";
+      String  s = "abciifeee";
       int k = 3;
+       int  maxCount =0;
         Set<Character> characterSet = new HashSet<>();
         characterSet.add('a');
         characterSet.add('e');
         characterSet.add('i');
         characterSet.add('o');
         characterSet.add('u');
+        int vowelsCount=0;
+        int initialValue =0;
+        int maxValue = 0;
       List<String> integers = Arrays.stream(s.split("")).collect(Collectors.toList());
-      for(int i = 3;i<s.length();i=i+3){
-          if(s.contains(s.substring(0,i))){
-
+      for(int i = 0;i<s.length();i++){
+          if(characterSet.contains(s.charAt(i))){
+              vowelsCount = vowelsCount+1;
           }
       }
+        for(int i = 0;i<s.length()-2;i=i+3){
+           String sub = s.substring(i,i+3);
+           for(int j =0;j<sub.length();j++) {
+              if(characterSet.contains(sub.charAt(j)) && vowelsCount != 0) {
+                  maxCount = maxCount + 1;
+                  vowelsCount = vowelsCount - 1;
+                  maxValue = Math.max(maxValue, maxCount);
+              }
+           }
+           maxCount = 0;
+        }
+      System.out.println("vowelsCount" + vowelsCount);
+      System.out.println("maxValue"+maxValue);
+
+      //alternate
+        int max=0;
+        int c=0;
+        for(int i=0;i<k;i++){
+            if(isvowel(s.charAt(i)))
+                c++;
+        }
+        max=c;
+        for(int i=k;i<s.length();i++){
+            if(isvowel(s.charAt(i))){
+                c++;
+            }
+            if(isvowel(s.charAt(i-k))){
+                c--;
+            }
+            max=Math.max(max,c);
+        }
+        System.out.println( max);
+
+
+    }
+
+    private static boolean isvowel(char c) {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
     }
 }

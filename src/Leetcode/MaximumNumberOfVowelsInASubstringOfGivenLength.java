@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 //Explanation: "lee", "eet" and "ode" contain 2 vowels
 public class MaximumNumberOfVowelsInASubstringOfGivenLength {
     public static void main(String[] args){
-      String  s = "abciifeee";
+      String  s = "abciiidef";
       int k = 3;
        int  maxCount =0;
         Set<Character> characterSet = new HashSet<>();
@@ -61,7 +61,28 @@ public class MaximumNumberOfVowelsInASubstringOfGivenLength {
       System.out.println("vowelsCount" + vowelsCount);
       System.out.println("maxValue"+maxValue);
 
-      //alternate
+      //alternate 2
+        HashSet<Character> set= new HashSet<>();
+        set.add('a');
+        set.add('e');
+        set.add('i');
+        set.add('o');
+        set.add('u');
+        int vowel=0;
+        for(int i=0;i<k;i++)
+            if(set.contains(s.charAt(i))) vowel++;
+
+        int maxvowel=vowel;
+
+        for(int i=k;i<s.length();i++){
+            if(set.contains(s.charAt(i-k))) vowel--;
+            if(set.contains(s.charAt(i))) vowel++;
+            maxvowel= Math.max(maxvowel, vowel);
+        }
+
+        System.out.println(maxvowel);
+
+      //alternate 3
         int max=0;
         int c=0;
         for(int i=0;i<k;i++){

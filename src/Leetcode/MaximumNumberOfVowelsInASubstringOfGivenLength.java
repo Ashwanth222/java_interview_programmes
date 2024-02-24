@@ -100,8 +100,6 @@ public class MaximumNumberOfVowelsInASubstringOfGivenLength {
             max=Math.max(max,c);
         }
         System.out.println( max);
-
-
     }
 
     private static boolean isvowel(char c) {

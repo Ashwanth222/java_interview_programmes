@@ -5,6 +5,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+//https://www.java67.com/2014/04/java-8-stream-examples-and-tutorial.html
 public class Java8Streams {
     public static void main(String[] args){
         List<String> strList = Arrays.asList("abc", "", "bcd", "", "defg", "jk");

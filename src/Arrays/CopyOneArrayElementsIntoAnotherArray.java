@@ -17,7 +17,7 @@ public class CopyOneArrayElementsIntoAnotherArray {
 
             // Change to b[] will also reflect in a[]
             // as 'a' and 'b' refer to same location.
-            b[0]++;
+           // b[0]++;
 
             System.out.println("Contents of a[] ");
             for (int i = 0; i < a.length; i++)

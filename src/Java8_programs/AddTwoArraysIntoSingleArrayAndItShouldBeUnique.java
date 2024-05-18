@@ -21,5 +21,11 @@ public class AddTwoArraysIntoSingleArrayAndItShouldBeUnique {
         combinedIntegers.stream().sorted().distinct().forEach(System.out::println);
         Object[] integers3 = combinedIntegers.toArray();
         System.out.println(Arrays.toString(Arrays.stream(integers3).distinct().toArray()));
+
+        //Alternate
+        List<Integer> combinedIntegers1 = new ArrayList<>();
+        Arrays.stream(arr1).forEach(r -> combinedIntegers1.add(r));
+        Arrays.stream(arr2).forEach(r -> combinedIntegers1.add(r));
+        combinedIntegers1.stream().distinct().sorted().forEach(e-> System.out.println(e));
     }
 }

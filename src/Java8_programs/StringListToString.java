@@ -14,9 +14,15 @@ public class StringListToString {
         // Convert the string list into String
         // using Collectors.joining() method
         String chString
-                = str.stream().collect(Collectors.joining());
+                = str.stream().collect(Collectors.joining(" "));
 
         // Print the concatenated String
-        System.out.println(chString);
+       System.out.println(chString);
+
+        //alternate
+        StringBuffer sb = new StringBuffer();
+       str.stream().forEach(e -> sb.append(e +" "));
+       System.out.println(sb);
+
     }
 }

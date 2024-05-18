@@ -21,7 +21,7 @@ public class MostFrequentElementInArray {
         //get most repeated value
         int value = Arrays.stream(arr).boxed()
                 .collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
-                .entrySet().stream().filter(ele ->ele.getValue()>1)
+                .entrySet().stream()
                 .sorted((s1,s2)->s2.getValue().intValue()- s1.getValue().intValue())
                 .findFirst().get().getValue().intValue();
         System.out.println(value);

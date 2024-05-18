@@ -41,8 +41,9 @@ public class MoveZerosToEndOfArray {
 
     public static void main(String[] args)
     {
+        int[] numbers = new int[] {12, 34, 67, 89, 34};
+        moveZerosToEnd(numbers);
         moveZerosToEnd(new int[] {12, 0, 7, 0, 8, 0, 3});
-
         moveZerosToEnd(new int[] {1, -5, 0, 0, 8, 0, 1});
 
         moveZerosToEnd(new int[] {0, 1, 0, 1, -5, 0, 4});

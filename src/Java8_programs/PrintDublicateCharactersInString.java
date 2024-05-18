@@ -20,5 +20,13 @@ public class PrintDublicateCharactersInString {
                         .collect(Collectors.toSet());
 
         System.out.println(duplicateChars);
+
+        //method 2
+        Arrays.stream(inputString.replace(" ", "").toLowerCase()
+                .split(""))
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
+                .entrySet().stream()
+                .filter(i -> i.getValue() > 1)
+                .forEach(e -> System.out.println(e.getKey()));
     }
 }

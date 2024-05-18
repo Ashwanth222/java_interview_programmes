@@ -6,7 +6,7 @@ import java.util.Comparator;
 public class ProgramToPrintDistinctLastElementInTheArray {
     public static void main(String[] args){
         int[] arr = {1, 2, 2, 3, 4, 4, 4, 5, 5};
-        int a = Arrays.stream(arr).boxed().distinct().sorted(Comparator.reverseOrder()).findFirst().get();
+        int a = Arrays.stream(arr).boxed().skip(arr.length -1).findFirst().get().intValue();
         System.out.println(a);
     }
 }

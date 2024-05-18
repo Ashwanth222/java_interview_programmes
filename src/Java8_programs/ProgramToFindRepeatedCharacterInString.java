@@ -17,13 +17,9 @@ public class ProgramToFindRepeatedCharacterInString {
                 Arrays.stream(inputString.split(""))
                         .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()));
 
-        String firstRepeatedChar = charCountMap.entrySet()
+        charCountMap.entrySet()
                 .stream()
                 .filter(entry -> entry.getValue() > 1)
-                .map(entry -> entry.getKey())
-                .findFirst()
-                .get();
-
-        System.out.println(firstRepeatedChar);
+                        .forEach(e -> System.out.println(e.getKey()));
     }
 }

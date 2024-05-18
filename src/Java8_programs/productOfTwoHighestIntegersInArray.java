@@ -3,7 +3,7 @@ package Java8_programs;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class productOfHighestLargestIntegersInArray {
+public class productOfTwoHighestIntegersInArray {
     public static void main(String[] args){
         //int[] arr = {3,6,7,8,6,2,9};
         int[] arr = {-3,-6,-7,-8,-6,-2,-9};

@@ -10,7 +10,7 @@ public class SortTheList {
         integerList.stream().sorted().forEach(System.out::println);  //method 1
 
         integerList.stream().sorted((s1, s2) -> s2-s1).forEach(System.out::println);  //method 2 descending
-        integerList.stream().sorted((s1, s2) -> s2-s1).forEach(System.out::println);  //method 2 ascending
+        integerList.stream().sorted((s1, s2) -> s1-s2).forEach(System.out::println);  //method 2 ascending
 
         integerList.stream().sorted(Comparator.naturalOrder()).forEach(System.out::println); //method 3 descending
         integerList.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println); //method 3 ascending

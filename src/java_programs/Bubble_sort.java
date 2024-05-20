@@ -1,5 +1,7 @@
 package java_programs;
 
+import java.util.Arrays;
+
 public class Bubble_sort {
     public static void main(String []args){
         int arr[] ={3,60,35,2,45,320,5};
@@ -28,5 +30,19 @@ public class Bubble_sort {
         for(int i=0; i < arr.length; i++){
             System.out.print(arr[i] + " ");
         }
+
+        //
+
+        int arr1[] ={3,60,35,2,45,320,5};
+        for(int i = 0; i<arr1.length;i++){
+            for(int j = 1; j<arr1.length;j++){
+                if(arr1[j-1] < arr1[j]) {
+                    temp = arr1[j-1];
+                    arr1[j-1] = arr1[j];
+                    arr1[j] = temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr1));
     }
 }

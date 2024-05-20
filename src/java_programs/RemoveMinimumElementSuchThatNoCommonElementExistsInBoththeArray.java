@@ -1,7 +1,7 @@
 package java_programs;
 
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class RemoveMinimumElementSuchThatNoCommonElementExistsInBoththeArray {
     // JAVA Code to Remove minimum number of elements
@@ -62,9 +62,26 @@ public class RemoveMinimumElementSuchThatNoCommonElementExistsInBoththeArray {
 
             System.out.println(minRemove(a, b, n, m));
 
+
+            //--------------------------------------------------
+            int c[] = { 1, 2, 3, 4 };
+            int d[] = { 2, 3, 4, 5, 8 };
+
+            //alternate
+            List<Integer> list1 = new ArrayList<>();
+            List<Integer> list2 = new ArrayList<>();
+
+            Arrays.stream(c).boxed().forEach(e -> list1.add(e));
+            Arrays.stream(d).boxed().forEach(e -> list2.add(e));
+
+//            List<Integer> uList1 = list1.stream().filter(e -> list2.remove(e))
+//                    .collect(Collectors.toList());
+            List<Integer> uList2 = list2.stream().filter(l -> list1.remove(l))
+                    .collect(Collectors.toList());
+            //System.out.println(uList1);
+            System.out.println(uList2);
+            System.out.println(uList2.size());
+
         }
     }
-
-// This code is contributed by Arnav Kr. Mandal.
-
 

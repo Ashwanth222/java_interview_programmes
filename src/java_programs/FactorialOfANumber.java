@@ -9,10 +9,18 @@ public class FactorialOfANumber {
         }
         System.out.println(fact);
 
-        // int num = 6;
-        //     for(int i = num-1; i>1;i--){
-        //         num = num*i;
-        //     }
-        //     System.out.println(num);
+        //alternate
+         int num = 6;
+             for(int i = num-1; i>1;i--){
+                 num = num*i;
+             }
+             System.out.println(num);
+
+             //alternate
+        for(int i = 6; i>0; i--){
+            fact = fact*i;
+        }
+        System.out.println(fact);
+
     }
 }

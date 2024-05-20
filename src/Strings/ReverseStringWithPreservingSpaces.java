@@ -60,5 +60,23 @@ public class ReverseStringWithPreservingSpaces {
         reverseString("JAVA JSP ANDROID");
 
         reverseString("1 22 333 4444 55555");
+
+        //---------------------------------------------
+
+        //alternate
+        String s = "hi how are you";
+        String ss = s.replace(" ", "");
+        StringBuffer sb = new StringBuffer();
+        String sb1 = new StringBuffer(s).reverse().toString();
+        System.out.println(sb1);
+        for(int i = 0; i<s.length(); i++){
+            if(Character.isWhitespace(sb1.charAt(i))){
+                sb.append(" ");
+            }
+            if(!Character.isWhitespace(sb1.charAt(i))){
+                sb.append(sb1.charAt(i));
+            }
+        }
+        System.out.println(sb);
     }
 }

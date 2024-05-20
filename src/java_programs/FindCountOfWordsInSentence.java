@@ -20,5 +20,16 @@ public class FindCountOfWordsInSentence {
             }
         }
         System.out.println(stringCount);
+
+        //alternate
+        Map<String, Integer> strings = new HashMap<>();
+        for(String s : st){
+            if(!strings.containsKey(s)){
+                strings.put(s,1);
+            }else{
+                strings.put(s, strings.get(s)+1);
+            }
+        }
+        System.out.println(strings);
     }
 }

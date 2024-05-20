@@ -1,27 +1,34 @@
 package java_programs;
 
 public class PalindromeString {
+    public static boolean isPalindrome(String str)
+    {
+        // Initializing an empty string to store the reverse
+        // of the original str
+        String rev = "";
+
+        // Initializing a new boolean variable for the
+        // answer
+        boolean ans = false;
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev = rev + str.charAt(i);
+        }
+
+        // Checking if both the strings are equal
+        if (str.equals(rev)) {
+            ans = true;
+        }
+        return ans;
+    }
     public static void main(String[] args)
     {
-        String s1 = "JavaJ2eeStrutsHibernate";
+        // Input string
+        String str = "geeeeg";
 
-        String s2 = "StrutsHibernateJavaJ2ee";
-
-        //Step 1
-
-        if(s1.length() != s2.length())
-        {
-            System.out.println("s2 is not rotated version of s1");
-        }
-        else
-        {
-            //Step 2
-
-            String s3 = s1 + s1;
-
-            //Step 3
-
-            System.out.println("s2 is a rotated version of s1");
-        }
+        // Convert the string to lowercase
+        str = str.toLowerCase();
+        boolean A = isPalindrome(str);
+        System.out.println(A);
     }
 }

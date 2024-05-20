@@ -33,5 +33,14 @@ public class ReverseSentence {
         System.out.println("Output String : "+outputString);
 
         sc.close();
+
+        //alternate
+        String s6 = "hello this is my name";
+        StringBuffer  sb = new StringBuffer();
+        String[] s7 = s6.split(" ");
+        for(int l = s7.length-1; l>=0; l--){
+            sb.append(s7[l] + " ");
+        }
+        System.out.println(sb);
     }
 }

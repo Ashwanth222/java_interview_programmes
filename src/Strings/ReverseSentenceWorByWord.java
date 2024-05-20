@@ -14,5 +14,8 @@ public class ReverseSentenceWorByWord {
 
         StringBuilder sb2 = new StringBuilder(s1).reverse();
         System.out.println(sb2);                                //method 2
+
+        StringBuffer sb3 = new StringBuffer(s1).reverse();
+        System.out.println(sb3);                                //method  3
     }
 }

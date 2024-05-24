@@ -43,7 +43,14 @@ public class CompressCharLengthToString {
            tstr = tstr+ str;
         }
         System.out.println(tstr);
-    }
+
+        //alternate
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i<=cha.size()-1;i++) {
+            sb.append(keys.get(i)).append(values.get(i));
+        }
+        System.out.println(sb);
+        }
 //      public int compress(char[] chars) {
 //        int n = chars.length;
 //        StringBuilder sb = new StringBuilder();

@@ -15,7 +15,5 @@ public class Sort_elements_of_an_array {
             System.out.print(num + " ");
         }
         System.out.print(arr[1]);   //second highest element in the array
-
     }
-
 }

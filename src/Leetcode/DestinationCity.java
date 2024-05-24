@@ -49,7 +49,7 @@ public class DestinationCity {
           String innerList11= list1.get(0);
            cities1.add(innerList11);
            System.out.println("cities1" + cities1);
-       }
+        }
         for(List<String> list2: listOfLists){
             String innerList12=   list2.get(1);
             cities2.add(innerList12);

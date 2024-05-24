@@ -33,25 +33,25 @@ public class FindTheDifference {
                 .forEach(i->set.add(i));
        System.out.println(set);
        Arrays.stream(t.split(""))
-               .filter(i-> !set.contains(i) )
+               .filter(i-> !set.contains(i))
                .forEach(e-> System.out.println(e));
 
 
        //alternate
 
-//        char[] ch = s.toCharArray();
-//        char[] c = t.toCharArray();
-//        char result = 0;
-//
-//        for (int i = 0; i < ch.length; i++) {
-//            result ^= ch[i];
-//        }
-//
-//        for (int i = 0; i < c.length; i++) {
-//            result ^= c[i];
-//        }
-//
-//        System.out.println(result);
+        char[] ch = s.toCharArray();
+        char[] c = t.toCharArray();
+        char result = 0;
+
+        for (int i = 0; i < ch.length; i++) {
+            result ^= ch[i];
+        }
+
+        for (int i = 0; i < c.length; i++) {
+            result ^= c[i];
+        }
+
+        System.out.println(result);
 
     }
 }

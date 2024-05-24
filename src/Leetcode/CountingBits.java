@@ -31,12 +31,12 @@ public class CountingBits {
     public static void main(String[] args){
         int n = 5;
        String s = Integer.toBinaryString(n);
-     //  System.out.println(s);
+       System.out.println(s);
        for(int i = 0; i<=n;i++){
            //System.out.println(Integer.toBinaryString(i));
            String s1 = Integer.toBinaryString(i);
            long count = Arrays.stream(s1.split("")).mapToInt(Integer::parseInt).filter(k-> k == 1).count();
-           System.out.println(count);
+           System.out.println("count " + count);
        }
 
        //alternate

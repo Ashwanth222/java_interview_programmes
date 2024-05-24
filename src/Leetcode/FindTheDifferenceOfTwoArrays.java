@@ -25,14 +25,23 @@ public class FindTheDifferenceOfTwoArrays {
         HashSet<Integer> set = new HashSet<>();
         for (int n : nums1) set.add(n);
 
-        HashSet<Integer> list = new HashSet<>();
+        HashSet<Integer> set1 = new HashSet<>();
+        for (int n : nums2) set1.add(n);
 
+        HashSet<Integer> list = new HashSet<>();
+        HashSet<Integer> list1 = new HashSet<>();
         for (int n1 : nums2) {
             if (!set.contains(n1)) {
                 list.add(n1);
             }
         }
+        for (int n2 : nums1) {
+            if (!set1.contains(n2)) {
+                list1.add(n2);
+            }
+        }
         System.out.println(list.stream().toList());
+        System.out.println(list1.stream().toList());
     }
 
 }

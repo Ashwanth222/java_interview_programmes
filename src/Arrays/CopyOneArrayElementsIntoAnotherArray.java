@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class CopyOneArrayElementsIntoAnotherArray {
     // A Java program to demonstrate that simply
 // assigning one array reference is incorrect
@@ -26,6 +28,11 @@ public class CopyOneArrayElementsIntoAnotherArray {
             System.out.println("\n\nContents of b[] ");
             for (int i = 0; i < b.length; i++)
                 System.out.print(b[i] + " ");
+
+            //alternate
+            System.out.println();
+            int[] c = Arrays.stream(a).toArray();
+            System.out.println(Arrays.toString(c));
         }
 
 

@@ -1,12 +1,11 @@
 package Leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-//Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
+//Given an array nums of n integers where nums[i] is in the range [1, n],
+// return an array of all the integers in the range [1, n] that do not appear in nums.
 //
 //
 //
@@ -35,6 +34,14 @@ public class FindNumbersDisappearedInArray {
            }
        }
 
+       //alternate
+        List<Integer> integerList = new LinkedList<>();
+        IntStream.range(min, max).boxed().forEach(e -> integerList.add(e));
+        System.out.println(integerList);
 
+        List<Integer> disappered = integerList
+                .stream()
+                .filter(l -> !set.contains(l)).collect(Collectors.toList());
+        System.out.println(disappered);
     }
 }

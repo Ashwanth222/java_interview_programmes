@@ -10,6 +10,5 @@ public class CountOfCharacters {
         Arrays.stream(s1.split("")).map(e -> e.toLowerCase()).map(k -> k.replaceAll(" ", ""))
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().skip(1).forEach(e -> System.out.println(e.getKey() + " "+ e.getValue()));
-
     }
 }

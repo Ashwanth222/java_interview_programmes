@@ -15,5 +15,11 @@ public class FindEvenAndOddInGivenList {
 
         integers.stream().collect(Collectors.groupingBy(i->i%2 ==0))  //method 2 odd
                 .entrySet().stream().filter(e->e.getKey()==false).forEach(System.out::println);
+
+        integers.stream().collect(Collectors.partitioningBy(i->i%2 ==0))  //method 2 even
+                .entrySet().stream().filter(e->e.getKey()==true).forEach(System.out::println);
+
+        integers.stream().collect(Collectors.partitioningBy(i->i%2 ==0))  //method 2 odd
+                .entrySet().stream().filter(e->e.getKey()==false).forEach(System.out::println);
     }
 }

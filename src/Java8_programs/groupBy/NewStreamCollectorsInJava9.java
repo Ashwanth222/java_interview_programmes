@@ -151,6 +151,14 @@ public class NewStreamCollectorsInJava9 {
 
         System.out.println("authorComments2 " + authorComments2);
 
+        List<Blog> sortedBlogs = blogs.stream()
+                .sorted(Comparator.comparingLong(Blog::getLikes))
+                .toList();
+        System.out.println("sortedBlogs" + sortedBlogs);
+
+        Map<String,Long> map10 =blogs.stream()
+                .collect(Collectors.toMap(Blog::getAuthorName, Blog::getLikes));
+        System.out.println("map10" + map10);
 
 
 //        Map<String, BigDecimal> totalByItem = orders.stream()

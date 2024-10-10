@@ -28,7 +28,6 @@ public class MaximumSumKConsecutiveElementsInArray {
 
             return max_sum;
         }
-
         // Driver code
         public static void main(String[] args)
         {

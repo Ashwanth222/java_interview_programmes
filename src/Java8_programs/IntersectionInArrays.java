@@ -53,7 +53,7 @@ public static void main(String[] args){
             .stream().collect(Collectors.toSet())
             .stream().flatMap(l -> l.stream().distinct()).collect(Collectors.toSet());
     System.out.println(setOfIntegers);
-setOfIntegers.retainAll(Arrays.stream(inputArray1).boxed().collect(Collectors.toSet()));
+    setOfIntegers.retainAll(Arrays.stream(inputArray1).boxed().collect(Collectors.toSet()));
     System.out.println(setOfIntegers);
     setOfIntegers.retainAll(Arrays.stream(inputArray2).boxed().collect(Collectors.toSet()));
     System.out.println(setOfIntegers);

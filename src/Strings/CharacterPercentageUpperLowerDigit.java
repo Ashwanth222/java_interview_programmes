@@ -56,7 +56,7 @@ public class CharacterPercentageUpperLowerDigit {
 
         //Calculating percentage of uppercase letters, lowercase letters, digits and other characters
 
-        double upperCaseLetterPercentage = (upperCaseLetters * 100.0) / totalChars ;
+        double upperCaseLetterPercentage = (upperCaseLetters * 100.0) / totalChars;
 
         double lowerCaseLetterPercentage = (lowerCaseLetters * 100.0) / totalChars;
 

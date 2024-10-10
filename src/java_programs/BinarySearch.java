@@ -20,8 +20,26 @@ public class BinarySearch {
     }
     public static void main(String args[]){
         int arr[] = {10,20,30,40,50};
-        int key = 40;
+        int key = 60;
         int last=arr.length-1;
         binarySearch(arr,0,last,key);
+
+        //alternate
+
+        int first = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            int mid = (first + last) / 2;
+            if (arr[mid] == key) {
+                System.out.println("value found at index " + mid + " "+arr[mid]);
+                break;
+            } else if (arr[mid] < key) {
+                first = mid + 1;
+            } else if (arr[mid] > key) {
+                last = mid - 1;
+            }
+        }
+        if ( first > last ){
+            System.out.println("Element is not found!");
+        }
     }
 }

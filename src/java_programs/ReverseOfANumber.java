@@ -10,5 +10,13 @@ public class ReverseOfANumber {
           a = a/10;
       }
       System.out.println(c);
+
+      //alternate
+
+        int a1 = 5432;
+        String str = Integer.toString(a1);
+        StringBuffer sb = new StringBuffer(str).reverse();
+        System.out.println(sb);
+
     }
 }

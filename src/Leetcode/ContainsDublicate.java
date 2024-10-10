@@ -16,5 +16,19 @@ public class ContainsDublicate {
         }if(j == 0){
             System.out.println("doesn't contain dublicates");
         }
+
+        //alternate
+        Arrays.sort(arr);
+        int count = 0;
+        for(int i =1; i<arr.length; i++){
+            if(arr[i-1] == arr[i]){
+                count ++;
+                System.out.println("contains duplicate");
+                break;
+            }
+        }
+        if(count == 0){
+            System.out.println("doesn't contains duplicate");
+        }
     }
 }

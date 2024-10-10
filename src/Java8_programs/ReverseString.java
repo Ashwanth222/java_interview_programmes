@@ -17,6 +17,6 @@ public class ReverseString {
 
         //alternate
         String sb1 = new StringBuilder(s1).reverse().toString();
-        System.out.println(sb);
+        System.out.println(sb1);
     }
 }

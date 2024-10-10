@@ -10,7 +10,7 @@ public class MathOpertaions {
         System.out.println(min(a, b));
         System.out.println(Math.max(2, 3));    //3
         System.out.println(Math.max(2.5, 3));     //4.0
-        System.out.println( Math.min(2.5, 4.6));   //2.5
+        System.out.println(Math.min(2.5, 4.6));   //2.5
         System.out.println(Math.abs(-2));         //2
         System.out.println(Math.abs(-2.1));       //2.1
         System.out.println(Math.random());       //any random

@@ -40,7 +40,7 @@ public class CompressCharLengthToString {
         String tstr = "";
         for(int i = 0; i<=cha.size()-1;i++) {
           String str =  keys.get(i).toString() + values.get(i).toString();
-           tstr = tstr+ str;
+           tstr = tstr + str;
         }
         System.out.println(tstr);
 

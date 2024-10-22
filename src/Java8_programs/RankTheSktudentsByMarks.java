@@ -31,5 +31,6 @@ public class RankTheSktudentsByMarks {
                 .collect(Collectors.toList());
 
         System.out.println(marks);
+
     }
 }

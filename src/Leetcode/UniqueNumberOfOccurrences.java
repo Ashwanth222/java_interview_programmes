@@ -1,8 +1,7 @@
 package Leetcode;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 //Given an array of integers arr, return true if the number of occurrences of each value in the array is unique or false otherwise.
@@ -42,6 +41,15 @@ public class UniqueNumberOfOccurrences {
         System.out.println("k set size" + k);
         String s = (int) l == (int) k ? "unique" : "not unique";
         System.out.println(s);
+
+        //alternate
+        Map<Integer, Long> map = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(e -> e,Collectors.counting()));
+        List<Long> listValues = map.values().stream().toList();
+        System.out.println(listValues);
+        Set<Long> setValues = map.values().stream().collect(Collectors.toSet());
+        System.out.println(setValues);
+        String ss = listValues.size() == setValues.size() ? "unique" : "not unique";
+        System.out.println("ss :" + ss);
 
         //  HashMap<Integer, Integer> nums = new HashMap<>();
         //        for (int j : arr) {

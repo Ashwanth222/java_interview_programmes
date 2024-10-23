@@ -1,6 +1,7 @@
 package Leetcode;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UncommonCharactersInTwoStrings {
     public static void main(String[] args) {
@@ -40,6 +41,15 @@ public class UncommonCharactersInTwoStrings {
 
         setCharacters.stream().filter(e ->!stringCountA.keySet().removeAll(Collections.singleton(e))).forEach(System.out::println);
         setCharacters.stream().filter(e ->!stringCountB.keySet().removeAll(Collections.singleton(e))).forEach(System.out::println);
+
+        //alternate
+        Map<String, Long> map1 = Arrays.stream(a.split("")).collect(Collectors.groupingBy(e-> e, Collectors.counting()));
+        Map<String, Long> map2 = Arrays.stream(b.split("")).collect(Collectors.groupingBy(e-> e, Collectors.counting()));
+        Set<String> set1 =map1.keySet();
+        Set<String> set2 =map2.keySet();
+        Set<String> set3 = new HashSet<>(set1);
+        set3.addAll(set2);
+        System.out.println("set3" + set3);
 
     }
 }

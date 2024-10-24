@@ -1,5 +1,10 @@
 package Leetcode;
 
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 //For two strings s and t, we say "t divides s" if and only if s = t + ... + t
 // (i.e., t is concatenated with itself one or more times).
 //
@@ -23,8 +28,8 @@ package Leetcode;
 public class GreatestCommonDivisorOfStrings {
     public static void main(String[] args){
 
-        String s1 = "ABCABC";
-        String s2 = "ABC";
+        String s1 = "ABABABABAB";
+        String s2 = "ABAB";
         String high = s1.length() >s2.length()?s1:s2;
         String low = s1.length() >s2.length()?s2:s1;
         StringBuffer sb = new StringBuffer();
@@ -42,5 +47,23 @@ public class GreatestCommonDivisorOfStrings {
            }
         }
         System.out.println(sb.toString());
+
+        //alternate
+
+        Map<String, Long> map1 = Arrays.stream(s1.split("")).collect(Collectors.groupingBy(e-> e, Collectors.counting()));
+        Map<String, Long> map2 = Arrays.stream(s2.split("")).collect(Collectors.groupingBy(e-> e, Collectors.counting()));
+
+        System.out.println(map1);
+        System.out.println(map2);
+        int ll = map2.values().size()-1;
+        System.out.println(map2.values().size());
+        StringBuffer sb2 = new StringBuffer();
+        Set<String> set =map1.keySet();
+        if(set.size()-1 == ll){
+            System.out.println(set);
+            set.stream().forEach(g-> sb2.append(g));
+        }
+        System.out.println("greatest common divisor of two strings  " + sb2);
+
     }
 }

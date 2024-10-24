@@ -28,8 +28,8 @@ import java.util.stream.Collectors;
 //Output: 4
 public class InsertPosition {
     public static void main(String[] args) {
-        int[] nums = {1, 3, 5, 6};
-        int target = 5;
+        int[] nums = {1, 3, 5, 6, 7, 9};
+        int target = 8;
         for (int i = 0; i < nums.length; i++) {
             if(nums[i] >target || nums[i] == target){
                 System.out.println(i);

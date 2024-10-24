@@ -1,9 +1,6 @@
 package Leetcode;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -11,6 +8,15 @@ public class FindTheDifferenceOfTwoArrays {
     public static void main(String[] args) {
         int[] nums1 = {1, 2, 3};
         int[] nums2 = {2, 4, 6};
+
+       Set<Integer> set12 = Arrays.stream(nums2).boxed().collect(Collectors.toSet());
+        Set<Integer> set13 = Arrays.stream(nums1).boxed().collect(Collectors.toSet());
+
+        Set<Integer> unique1 = Arrays.stream(nums1).boxed().filter(i -> !set12.contains(i)).collect(Collectors.toSet());
+        Set<Integer> unique2 = Arrays.stream(nums2).boxed().filter(i -> !set13.contains(i)).collect(Collectors.toSet());
+
+        System.out.println("unique1" + unique1);
+        System.out.println("unique2" + unique2);
 //        List<Integer> num1Integers = Arrays.stream(nums1).boxed()
 //                .filter(e -> e.intValue() !=
 //                        Arrays.stream(nums2).boxed()

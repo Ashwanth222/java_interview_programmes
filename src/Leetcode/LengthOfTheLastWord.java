@@ -1,6 +1,7 @@
 package Leetcode;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 //. Length of Last Word
 //Easy
@@ -33,8 +34,13 @@ import java.util.Arrays;
 public class LengthOfTheLastWord {
     public static void main(String[] args){
         String s = "  fly   me  to the  moon  ";
+        System.out.println(s.strip());
        String s1 = Arrays.stream(s.trim().replace("  "," ")
                .split(" ")).skip(s.trim().replace("  "," ").split(" ").length - 1).findFirst().get();
         System.out.println(s1);
+
+        //alternate
+        String ss = Arrays.toString(s.trim().replace("  ", " ").replace("  ", " ").split(" "));
+        System.out.println(Arrays.stream(ss.split(" ")).skip(ss.split(" ").length-1).findFirst().get());
     }
 }

@@ -1,4 +1,4 @@
-//package Leetcode;
+package Leetcode;
 //
 //import java.util.HashMap;
 //import java.util.HashSet;
@@ -13,10 +13,33 @@
 //////Output: “geeksskeeg”
 //////Explanation: There are several possible palindromic substrings like “kssk”, “ss”, “eeksskee” etc.
 //////But the substring “geeksskeeg” is the longest among all.
-//public class LongestPalindromeSubstring {
-//    public static void main(String[] args){
-//        String str = "forgeeksskeegfor";
-//        // Output: “geeksskeeg”
+public class LongestPalindromeSubstring {
+    public static void main(String[] args){
+        String str = "ttkjfogeeksskeegofgjkglk";
+        //String str = "geeksskeeg";
+        // Output: “geeksskeeg”
+        int a_pointer = str.indexOf(str.charAt(0));
+        int b_pointer = str.lastIndexOf(str.charAt(str.length()-1));
+        StringBuffer sb = new StringBuffer();
+        while(a_pointer<b_pointer){
+            if(str.charAt(a_pointer) == str.charAt(b_pointer)){
+                sb.append(str.charAt(a_pointer));
+                a_pointer++;
+                b_pointer--;
+            } else if (str.charAt(a_pointer) != str.charAt(b_pointer)){
+                    sb.setLength(0);
+                    b_pointer--;
+                if(str.charAt(a_pointer) == str.charAt(b_pointer)){
+                    sb.append(str.charAt(a_pointer));
+                    a_pointer++;
+                    b_pointer--;
+                }else if (str.charAt(a_pointer++) == str.charAt(b_pointer)){
+                    sb.append(str.charAt(a_pointer));
+                    a_pointer++;
+                }
+            }
+        }
+        System.out.println(sb.toString().concat(sb.reverse().toString()));
 //        int left = 0;
 //        int maxLength=0;
 //        Set<Character> st = new HashSet<>();
@@ -35,7 +58,7 @@
 //        }
 //        System.out.println(st);
 //        System.out.println(maxLength);
-//
+
 //
 //        //alternate
 //        Set<Character>set=new HashSet<>();
@@ -60,5 +83,5 @@
 //        }
 //        System.out.println(set);
 //        System.out.println(maxLength1);
-//    }
-//}
+    }
+}

@@ -32,6 +32,32 @@ public class IsSubsequence {
         }else{
            System.out.println(count + "is not a subsequence");
         }
+
+       //alternate
+        String a = "abef";
+        String b = "ahbgde";
+
+        //input 2
+//        String a = "abe";
+//        String b = "ahbgde";
+//
+        //input 3
+//        String a = "abef";
+//        String b = "ahgde";
+        char[] ch1 =a.toCharArray();
+        char[] ch2 =b.toCharArray();
+        int j = 0;
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i<ch2.length && j< ch1.length; i++){
+            if ((ch2[i] == ch1[j])){
+                sb.append(ch2[i]);
+                j++;
+            }
+        }
+        System.out.println("sb  " + sb);
+        System.out.println(a.length() == sb.length());
+
+
        //  int n1 = s.length();
         //        int n2 = t.length();
         //

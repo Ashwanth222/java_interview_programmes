@@ -1,9 +1,6 @@
 package Leetcode;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 //You are given two strings s and t.
@@ -36,6 +33,18 @@ public class FindTheDifference {
                .filter(i-> !set.contains(i))
                .forEach(e-> System.out.println(e));
 
+       //alternate
+        String s3 = s + t;
+        System.out.println(s3);
+        StringBuffer sb = new StringBuffer();
+        Map<String, Long> map =Arrays.stream(s3.split(""))
+                .collect(Collectors.groupingBy(y -> y, Collectors.counting()));
+        map.entrySet().stream()
+                .filter(o -> o.getValue() == 1)
+                .map(o -> o.getKey())
+                .forEach(e -> sb.append(e));
+
+        System.out.println("extra string  " + sb);
 
        //alternate
 

@@ -41,7 +41,10 @@ public class FindRepeatedSubstring {
         String concatenated = s+s;
        // System.out.println(concatenated);
         boolean s4 = concatenated.substring(1,concatenated.length()-1).contains(s);
-       // System.out.println(concatenated.substring(1,concatenated.length()-1));
+        //String s3 = concatenated.substring(1,concatenated.length()-1);
+        // System.out.println(concatenated.substring(1,concatenated.length()-1));
+        //System.out.println(s3);
         System.out.println(s4);
+
     }
 }

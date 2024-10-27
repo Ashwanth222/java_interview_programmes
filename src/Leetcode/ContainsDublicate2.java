@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ContainsDublicate2 {
     public static void main(String[] args){
@@ -31,6 +32,15 @@ public class ContainsDublicate2 {
             System.out.println("doesn't contains dublicate");
         }else{
             System.out.println("it contains dublicate");
+        }
+
+        //alternate
+        Set<Integer> integers1 = Arrays.stream(arr).boxed().collect(Collectors.groupingBy(e -> e, Collectors.counting()))
+                .keySet();
+        if(integers1.toArray().length == arr.length){
+            System.out.println("doesn't contain duplicate");
+        } else{
+            System.out.println("contains duplicate");
         }
     }
 }

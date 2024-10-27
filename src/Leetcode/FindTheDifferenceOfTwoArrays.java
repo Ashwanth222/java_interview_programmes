@@ -17,6 +17,24 @@ public class FindTheDifferenceOfTwoArrays {
 
         System.out.println("unique1" + unique1);
         System.out.println("unique2" + unique2);
+
+        //alternate
+
+        Set<Integer> integerSet1 = Arrays.stream(nums1).boxed()
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting())).keySet();
+        Set<Integer> integerSet2 = Arrays.stream(nums2).boxed()
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting())).keySet();
+
+        List<Integer> integerList1 = integerSet2.stream().filter(i -> !integerSet1.removeAll(Collections.singleton(i)))
+                .toList();
+        List<Integer> integerList2 = integerSet1.stream().filter(i -> !integerSet2.removeAll(Collections.singleton(i)))
+                .toList();
+        System.out.println("integerList" + integerList1);
+        System.out.println("integerList" + integerList2);
+        List<Integer> uniqueIntegers = new ArrayList<>();
+        uniqueIntegers.addAll(integerList1);
+        uniqueIntegers.addAll(integerList2);
+       System.out.println("uniqueIntegers" + uniqueIntegers);
 //        List<Integer> num1Integers = Arrays.stream(nums1).boxed()
 //                .filter(e -> e.intValue() !=
 //                        Arrays.stream(nums2).boxed()
@@ -27,7 +45,7 @@ public class FindTheDifferenceOfTwoArrays {
 //     System.out.println(Arrays.stream(nums2).anyMatch(e-> num1Integers.contains(e)));
 
 
-
+        //alternate
         HashSet<Integer> set = new HashSet<>();
         for (int n : nums1) set.add(n);
 

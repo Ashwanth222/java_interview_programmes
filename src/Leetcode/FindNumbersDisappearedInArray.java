@@ -35,6 +35,11 @@ public class FindNumbersDisappearedInArray {
        }
 
        //alternate
+        int max1 = Arrays.stream(nums).max().getAsInt();
+        int min1 = Arrays.stream(nums).min().getAsInt();
+
+
+       //alternate
         List<Integer> integerList = new LinkedList<>();
         IntStream.range(min, max).boxed().forEach(e -> integerList.add(e));
         System.out.println(integerList);

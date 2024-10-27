@@ -40,7 +40,7 @@ public class MinimumIndexSumofTwoLists {
     public static void main(String[] args){
        String[] list1 = {"Shogun1","Shogun","Tapioca Express","Burger King","KFC"};
        String[] list2 = {"Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"};
-        List<String> l1= Arrays.stream(list1).toList();
+        List<String> l1 = Arrays.stream(list1).toList();
         List<String> l2 = Arrays.stream(list2).toList();
         int min = Integer.MAX_VALUE;
         List<String> result = new ArrayList<>();

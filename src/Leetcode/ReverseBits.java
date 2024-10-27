@@ -22,5 +22,15 @@ public class ReverseBits {
         System.out.println(sb);
 //        int sk = Integer.parseInt(String.valueOf(sb));
 //        System.out.println(sk);
+
+        //alternate
+        char[] chars = input.toCharArray();
+        StringBuffer sb1 = new StringBuffer();
+        for(int i =chars.length-1; i>=0; i--){
+            sb1.append(chars[i]);
+        }
+        System.out.println("reverse bits " + sb1);
+
+        System.out.println(sb.toString().contentEquals(sb1));
     }
 }

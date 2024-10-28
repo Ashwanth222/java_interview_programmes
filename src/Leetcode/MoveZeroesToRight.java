@@ -63,5 +63,6 @@ public class MoveZeroesToRight {
         Arrays.stream(nums3).boxed().filter(i -> i ==0).forEach( e -> integerList.add(e));
         System.out.println("integerList  " + integerList);
 
+
     }
 }

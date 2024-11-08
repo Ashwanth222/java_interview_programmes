@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 //
 //Input: nums = [1]
 //Output: 1
-public class SingleElement {
+public class FindNonRepeatedElementInArray {
     public static void main(String[] args){
        int[] nums = {4,1,2,6,1,2,4};
         Map<Integer,Long> map = Arrays.stream(nums).boxed()

@@ -1,4 +1,5 @@
 package Leetcode;
+
 //Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such indices exists, return false.
 //
 //
@@ -19,22 +20,22 @@ package Leetcode;
 //Output: true
 //Explanation: The triplet (3, 4, 5) is valid because nums[3] == 0 < nums[4] == 4 < nums[5] == 6.
 public class IncreasingTripletSubsequence {
-    public static void main(String[] args){
-        int[] arr = {2,1,5,0,4,6};
+    public static void main(String[] args) {
+        int[] arr = {2, 1, 5, 0, 4, 6};
         int count = 0;
-        for(int i = 0; i<arr.length-2;i++){
-            if(arr[i] <arr[i+1]&&arr[i+1]<arr[i+2]){
+        for (int i = 0; i < arr.length - 2; i++) {
+            if (arr[i] < arr[i + 1] && arr[i + 1] < arr[i + 2]) {
                 System.out.println(true);
-                count = count+1;
+                count = count + 1;
                 break;
             }
         }
-        if(count ==0){
+        if (count == 0) {
             System.out.println(false);
         }
 
         //alternate
-        int[] nums = {2,1,5,0,4,6};
+        int[] nums = {2, 1, 5, 0, 4, 6};
 
         if (nums == null || nums.length < 3) {
             System.out.println(false);
@@ -49,11 +50,11 @@ public class IncreasingTripletSubsequence {
                 b = num;
             } else {
                 flag = true;
-                 System.out.println(flag);
+                System.out.println(flag);
             }
         }
 
-        if(!flag) {
+        if (!flag) {
             System.out.println(flag);
         }
     }

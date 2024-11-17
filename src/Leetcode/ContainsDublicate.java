@@ -30,5 +30,17 @@ public class ContainsDublicate {
         if(count == 0){
             System.out.println("doesn't contains duplicate");
         }
+
+        //alternate
+        int[] arr1 = {5, 7, 8, 3, 6, 4, 2, 1};
+        long count1 = Arrays.stream(arr1).boxed().distinct().count();
+        System.out.println(count1);
+        long count2 = Arrays.stream(arr1).boxed().count();
+        System.out.println(count2);
+        if(count1 != count2){
+            System.out.println("contains duplicate");
+        }else {
+            System.out.println("not contains duplicate");
+        }
     }
 }

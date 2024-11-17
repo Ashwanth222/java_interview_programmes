@@ -68,5 +68,23 @@ public class GreatestNumberOfCandies {
                 ans.add(false);
         }
         System.out.println(ans);
+
+        //alternate
+        int[] candies1 = {2,3,5,1,3};
+        int maxCandies1 = 0;
+        for(int c : candies1)
+        {
+            maxCandies1 = Math.max(maxCandies, c);
+        }
+
+        boolean[] greatestNumberOfCandies = new boolean[candies1.length-1];
+        for(int i = 0; i<greatestNumberOfCandies.length; i++)
+        {
+            if(candies1[i] + extraCandies >= maxCandies1)
+                greatestNumberOfCandies[i] = true;
+            else
+                greatestNumberOfCandies[i] = false;
+        }
+        System.out.println(ans);
     }
 }

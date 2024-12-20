@@ -11,12 +11,12 @@ public class LengthOfLongestSubstring {
         int l = st.length();
         int max = 0;
         Set<Character> string = new HashSet<>();
-        while (b_pointer<st.length()) {
+        while (b_pointer < st.length()) {
             if (!string.contains(st.charAt(b_pointer))) {
                 string.add(st.charAt(b_pointer));
                 max = Math.max(string.size(), max);
                 b_pointer++;
-            }else{
+            } else {
                 string.remove(st.charAt(b_pointer));
                 a_pointer++;
             }

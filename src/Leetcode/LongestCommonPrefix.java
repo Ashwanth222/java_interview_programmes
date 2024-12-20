@@ -48,6 +48,5 @@ public class LongestCommonPrefix {
         }
         System.out.println("prefix  : " + prefix);
 
-
     }
 }

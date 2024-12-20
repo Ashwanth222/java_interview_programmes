@@ -15,6 +15,7 @@ public class SumOfArrayExceptItself {
                 }
             }
         }
+        System.out.println("result" + " = " +Arrays.toString(result));
         for(int i= 0; i<=arr.length-1;i++) {
             System.out.println(result[i]);
         }

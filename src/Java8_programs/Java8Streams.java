@@ -65,5 +65,12 @@ public class Java8Streams {
                 .collect(Collectors.toMap(Function.identity(), String::length, (e1, e2) -> e1, LinkedHashMap::new));
         System.out.println("map: " + cards2Length);
 
+        List<String> hostingProviders1 = Arrays.asList("Bluehost", "GoDaddy", "GoDaddy", "GoMommy", "Amazon AWS", "LiquidWeb", "FatCow");
+        System.out.println("list: " + hostingProviders1);
+        Map<String, Integer> cards2Length1 = hostingProviders.stream()
+                .collect(Collectors.toMap(Function.identity(), String::length, (e1, e2) -> e1, LinkedHashMap::new));
+        //because of function.identity only one Godaddy is available
+        System.out.println("map: " + cards2Length1);
+
     }
 }

@@ -2,10 +2,8 @@ package Java8_programs;
 
 //How do you extract duplicate elements from an array?
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class FindDublicateElementsInArray {
@@ -15,8 +13,26 @@ public class FindDublicateElementsInArray {
 
         Set<Integer> uniqueElements = new HashSet<>();
 
-        List<Integer> duplicateElements = listOfIntegers.stream().filter(i -> ! uniqueElements.add(i)).collect(Collectors.toList());
+        List<Integer> duplicateElements = listOfIntegers.stream()
+                .filter(i -> ! uniqueElements.add(i))
+                .collect(Collectors.toList());
 
         System.out.println(duplicateElements);
+
+        //alternate
+        Set<Integer> integerSet = new HashSet<>();
+        listOfIntegers.stream()
+                .filter(e -> !integerSet.add(e))
+                .forEach(e -> System.out.println(e));
+
+        //alternate
+        listOfIntegers.stream()
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .entrySet()
+                .stream()
+                .filter(i -> i.getValue()> 1)
+                .forEach( e -> System.out.println(e.getKey()));
+
+
     }
 }

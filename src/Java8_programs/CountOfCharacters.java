@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 public class CountOfCharacters {
     public static void main(String[] args){
         String s1 = "hi hello how are you";
-        Arrays.stream(s1.split("")).map(e -> e.toLowerCase()).map(k -> k.replaceAll(" ", ""))
+        Arrays.stream(s1.replaceAll(" ", "").split("")).map(e -> e.toLowerCase())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-                .entrySet().stream().skip(1).forEach(e -> System.out.println(e.getKey() + " "+ e.getValue()));
+                .entrySet().stream().forEach(e -> System.out.println(e.getKey() + " "+ e.getValue()));
 
         Arrays.stream(s1.replaceAll(" ", "").split(""))
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting())).entrySet()

@@ -12,5 +12,10 @@ public class MagicNumber {
         Integer sum1 = Arrays.stream(sum.toString().split("")).mapToInt(e -> Integer.parseInt(e)).boxed()
                 .collect(Collectors.summingInt(Integer::intValue));
         System.out.println(sum1);
+        if(sum1 == 1){
+            System.out.println("magic number");
+        }else{
+            System.out.println("not a magic number");
+        }
     }
 }

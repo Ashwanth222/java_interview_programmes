@@ -24,5 +24,12 @@ public class FindLengthOfStringWhichIsHighestAndLowest {
         Integer length = listOfStrings.stream().sorted((e1,e2) -> e2.length() - e1.length()).findFirst().get().length();
 
         System.out.println(length);
+
+        //alternate
+        String lowest1 = listOfStrings.stream().sorted(Comparator.comparing(String::length)).findFirst().get();
+        System.out.println(lowest1);
+
+        String highest1 = listOfStrings.stream().sorted(Comparator.comparing(String::length)).skip(listOfStrings.size()-1).findFirst().get();
+        System.out.println(highest1);
     }
 }

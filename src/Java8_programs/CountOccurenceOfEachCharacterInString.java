@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CountOccurenceOfEachCharacterInSltring {
+public class CountOccurenceOfEachCharacterInString {
     public static void main(String[] args){
         String str = "aaaaabbbccaab";
         // output = 5a3b2c2a1b

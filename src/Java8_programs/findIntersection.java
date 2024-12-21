@@ -1,5 +1,6 @@
 package Java8_programs;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class findIntersection {
     static void intersection(Integer[] ... inputArrays)
@@ -48,5 +49,14 @@ public class findIntersection {
         Integer[] inputArray4 = {7, 9, 4, 1};
 
         intersection(inputArray1, inputArray2, inputArray3, inputArray4);
+
+        //alternate
+        Set<Integer> set = new HashSet<>();
+        Arrays.asList(Arrays.stream(inputArray1).collect(Collectors.toList()),
+                Arrays.stream(inputArray2).collect(Collectors.toList()),
+                Arrays.stream(inputArray3).collect(Collectors.toList()),
+                Arrays.stream(inputArray4).collect(Collectors.toList()))
+                .stream().flatMap(List::stream).forEach(e -> set.add(e));
+        System.out.println(set);
     }
 }

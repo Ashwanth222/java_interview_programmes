@@ -13,5 +13,21 @@ public class FindDublicateStringElements {
                 .collect(Collectors.groupingBy
                         (Function.identity(), Collectors.counting()));
         System.out.println(namesCount);
+
+        //alternate
+                names.stream()
+                        .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
+                        .entrySet()
+                        .stream()
+                        .filter(e -> e.getValue()>1)
+                        .forEach(e -> System.out.println(e.getKey()));
+
+
+        //alternate
+        Set<String> integerSet = new HashSet<>();
+        List<String> stringList = names.stream()
+                .filter(i -> !integerSet.add(i))
+                .toList();
+        System.out.println(stringList);
     }
 }

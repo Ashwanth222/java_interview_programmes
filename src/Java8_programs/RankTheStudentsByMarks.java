@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class RankTheSktudentsByMarks {
+public class RankTheStudentsByMarks {
     public static void main(String[] args){
 
         Student s1 = new Student(1,"name1",36);
@@ -21,12 +21,9 @@ public class RankTheSktudentsByMarks {
 
         List<Student> students = Arrays.asList(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10);
 
-
-
-
         List<Map.Entry<Integer, List<Student>>> marks = students.stream()
-                .sorted((e1, e2) -> e2.getMarks() - e1.getMarks()).collect(Collectors.toList())
-                .stream().collect(Collectors.groupingBy(t-> t.getMarks()))
+                .sorted((e1, e2) -> e2.getMarks() - e1.getMarks()).toList()
+                .stream().collect(Collectors.groupingBy(Student::getMarks))
                 .entrySet().stream().sorted((e1,e2)-> e2.getKey() - e1.getKey())
                 .collect(Collectors.toList());
 

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class SeparateRepeatingAndNonReapeatingCharacterInString {
+public class SeparateRepeatingAndNonRepeatingCharacterInString {
     public static void main(String[] args){
         String s = "HI|HOW|ARE|YOU";
 

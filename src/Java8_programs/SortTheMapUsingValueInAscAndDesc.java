@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 
 public class SortTheMapUsingValueInAscAndDesc {
     public static void main(String[] ags){
-        List<String> name = Arrays.asList("tejas", "ramani", "sitha", "lakshman");
+        List<String> names = Arrays.asList("tejas", "ramani", "sitha", "lakshman");
 
-        Map<String, Integer> ascendingByValues = name.stream()
+        Map<String, Integer> ascendingByValues = names.stream()
                 .collect(Collectors.toMap(e->e, e->e.length()))
                 .entrySet().stream().sorted(Map.Entry.comparingByValue())
                 .collect(Collectors.toMap(e->e.getKey(), e-> e.getValue(), (e1, e2) -> e2,
@@ -18,7 +18,15 @@ public class SortTheMapUsingValueInAscAndDesc {
 
         System.out.println(ascendingByValues);
 
-        Map<String, Integer> descendingByValues = name.stream()
+        Map<String, Integer> ascendingByKeys = names.stream()
+                .collect(Collectors.toMap(e->e, e->e.length()))
+                .entrySet().stream().sorted(Map.Entry.comparingByKey())
+                .collect(Collectors.toMap(e->e.getKey(), e-> e.getValue(), (e1, e2) -> e2,
+                        LinkedHashMap::new));
+
+        System.out.println(ascendingByKeys);
+
+        Map<String, Integer> descendingByValues = names.stream()
                 .collect(Collectors.toMap(e->e, e->e.length()))
                 .entrySet().stream().sorted((e1,e2)-> e2.getValue()-e1.getValue())
                 .collect(Collectors.toMap(e->e.getKey(), e-> e.getValue(), (e1, e2) -> e2,
@@ -26,6 +34,13 @@ public class SortTheMapUsingValueInAscAndDesc {
 
         System.out.println(descendingByValues);
 
+        Map<String, Integer> descendingByKeys = names.stream()
+                .collect(Collectors.toMap(e->e, e->e.length()))
+                .entrySet().stream().sorted((e1,e2)-> e2.getKey().compareTo(e1.getKey()))
+                .collect(Collectors.toMap(e->e.getKey(), e-> e.getValue(), (e1, e2) -> e2,
+                        LinkedHashMap::new));
+
+        System.out.println(descendingByKeys);
 
     }
 }

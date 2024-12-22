@@ -13,6 +13,7 @@ public class PrintReverseOfPositiveAndNegativeNumber {
         if(j.indexOf('-')==0) {
             String reverseNegative = new StringBuffer(j.substring(1)).reverse().toString();
             System.out.println("-" + reverseNegative);
+            System.out.println("-".concat(reverseNegative));
         }
 
     }

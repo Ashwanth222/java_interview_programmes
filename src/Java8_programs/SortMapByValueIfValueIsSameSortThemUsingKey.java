@@ -24,7 +24,7 @@ public class SortMapByValueIfValueIsSameSortThemUsingKey {
         System.out.println(map);
 
         Map<String, Integer> map1 = map.entrySet().stream().sorted(Comparator.comparing(Map.Entry::getKey))
-                .collect(Collectors.toMap(Map.Entry::getKey, e -> e.getValue(), (e1, e2) -> e1, LinkedHashMap::new));
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
         System.out.println(map1);
 
         Map<String, Integer> map2 = map1.entrySet().stream().sorted(Comparator.comparing(Map.Entry::getValue))

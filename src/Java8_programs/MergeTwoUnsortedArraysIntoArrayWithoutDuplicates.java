@@ -11,7 +11,10 @@ public class MergeTwoUnsortedArraysIntoArrayWithoutDuplicates {
 
         int[] b = new int[] {8, 1, 9, 5};
 
-        int[] c = IntStream.concat(Arrays.stream(a), Arrays.stream(b)).sorted().distinct().toArray();
+        int[] c = IntStream.concat(Arrays.stream(a), Arrays.stream(b))
+                .sorted()
+                .distinct()
+                .toArray();
 
         System.out.println(Arrays.toString(c));
     }

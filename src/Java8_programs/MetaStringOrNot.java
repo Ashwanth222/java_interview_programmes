@@ -12,8 +12,8 @@ import java.util.stream.Collectors;
 // Note: Equal strings are not considered as meta strings.
 public class MetaStringOrNot {
     public static void main(String[] args){
-        String s1 = "Conserse";
-        String s2 = "Conierve";
+        String s1 = "Conseree";
+        String s2 = "Converse";
         List<Character> list = new ArrayList<>();
         if(s1.length() == s2.length()) {
             for (int i = 0; i < s1.length(); i++) {
@@ -58,6 +58,36 @@ public class MetaStringOrNot {
             }
             //System.out.println(sb.toString());
         }else{
+            System.out.println("both are not meta strings");
+        }
+
+        //alternate
+        StringBuffer sb1 = new StringBuffer();
+        StringBuffer sb2 = new StringBuffer();
+        if(s1.length() == s2.length()) {
+            for (int i = 0; i < s1.length(); i++) {
+                if (s1.charAt(i) != s2.charAt(i)) {
+                    sb1.append(s1.charAt(i));
+                    sb2.append(s2.charAt(i));
+                }
+            }
+            String s = sb1.toString();
+            String t = sb2.toString();
+            String st = Arrays.stream(s.split("")).sorted().collect(Collectors.joining());
+            String ts = Arrays.stream(t.split("")).sorted().collect(Collectors.joining());
+            System.out.println("s " + s);
+            System.out.println("t " + t);
+            System.out.println("s " + st);
+            System.out.println("t " + ts);
+            System.out.println("st length " + st.length());
+            System.out.println("ts length " + ts.length());
+
+            if(st.length() == 2 && ts.length() == 2 && st.equals(ts)) {
+                System.out.println("above both are meta strings");
+            }else {
+                System.out.println("both are not meta strings");
+            }
+        }else {
             System.out.println("both are not meta strings");
         }
     }

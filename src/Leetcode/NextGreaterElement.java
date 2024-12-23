@@ -51,5 +51,8 @@ public class NextGreaterElement {
                 }
             }
         }
+        if(nums1[nums1.length-1] == nums2[nums2.length-1]){
+            System.out.println("-1");
+        }
     }
 }

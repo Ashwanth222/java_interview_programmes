@@ -22,7 +22,7 @@ public class MultiplyTwoStrings {
        Integer numi1 = Integer.valueOf(num1);
        Integer numi2 = Integer.valueOf(num2);
        Integer multiply = numi1*numi2;
-       System.out.println(multiply.toString());
+       System.out.println("multiply.toString() " +multiply.toString());
 
        //alternate
 //        int multiple = 0, carry = 0, sum =0;
@@ -41,7 +41,7 @@ public class MultiplyTwoStrings {
 //            multiple = 0;
 //            System.out.println(sum);
 //        }
-//        System.out.println(sb.reverse());
+//        System.out.println("sb.reverse() " + sb.reverse());
 
 
         //alternate
@@ -53,15 +53,14 @@ public class MultiplyTwoStrings {
             for(int j = n - 1; j >= 0; j--) {
                 int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
                 int p1 = i + j, p2 = i + j + 1;
-                int sum = mul + pos[p2];
-
-                pos[p1] += sum / 10;
-                pos[p2] = (sum) % 10;
+                int sum1 = mul + pos[p2];
+                pos[p1] += sum1 / 10;
+                pos[p2] = (sum1) % 10;
             }
         }
 
-        StringBuilder sb = new StringBuilder();
-        for(int p : pos) if(!(sb.length() == 0 && p == 0)) sb.append(p);
-        System.out.println(sb.length() == 0 ? "0" : sb.toString());
+        StringBuilder sb1 = new StringBuilder();
+        for(int p : pos) if(!(sb1.length() == 0 && p == 0)) sb1.append(p);
+        System.out.println(sb1.length() == 0 ? "0" : sb1.toString());
     }
 }

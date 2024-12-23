@@ -1,5 +1,7 @@
 package java_programs;
 
+import java.util.Arrays;
+
 public class Finding_vowels {
     public static void main(String args[]) {
 
@@ -9,5 +11,12 @@ public class Finding_vowels {
                 System.out.println("Given string contains "+str.charAt(i)+" at the index "+i);
             }
         }
+
+        //alternate
+        Arrays.stream(str.replaceAll(" ", "").toLowerCase()
+                .split(""))
+                .filter(i -> i.matches("[aeiou]"))
+                .forEach(System.out::println);
+
     }
 }

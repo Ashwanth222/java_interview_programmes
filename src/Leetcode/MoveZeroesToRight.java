@@ -37,7 +37,7 @@ public class MoveZeroesToRight {
                count = count+ 1;
            }
        }
-       System.out.println(Arrays.toString(num1));
+       System.out.println("num1  " + Arrays.toString(num1));
        System.out.println(Arrays.toString(nums));
        System.out.println(count);
 
@@ -54,7 +54,7 @@ public class MoveZeroesToRight {
             }
         }
 
-        System.out.println(Arrays.toString(nums1));
+        System.out.println("nums1  " + Arrays.toString(nums1));
 
         //alternate
         int[] nums3 = {0,1,0,3,12};
@@ -63,6 +63,21 @@ public class MoveZeroesToRight {
         Arrays.stream(nums3).boxed().filter(i -> i ==0).forEach( e -> integerList.add(e));
         System.out.println("integerList  " + integerList);
 
-
+        //alternate
+        int[] num = {0,1,0,3,12};
+        int k = 0;
+        System.out.println("starting " + Arrays.toString(num));
+        for(int i = 0; i<num.length;i++){
+            if(num[i] != 0){
+                num[k] = num[i];
+                k++;
+            }
+        }
+        System.out.println("middle" + Arrays.toString(num));
+        while(k<num.length){
+            num[k] = 0;
+            k++;
+        }
+        System.out.println("num ending " + Arrays.toString(num));
     }
 }

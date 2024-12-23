@@ -35,20 +35,38 @@ import java.util.stream.Collectors;
 //Incrementing by one gives 9 + 1 = 10.
 //Thus, the result should be [1,0].
 public class PlusOne {
-    public static void main(String[] args){
-        int[] a = {4,3,2,1};
-        //int[] a = {9};
-        for(int j = 0; j<a.length;j++){
-            if(j != a.length-1){
-//                if(a[a.length-1] == 9){
-//                    a[j-1] = a[j-1] +1;
-//                    a[j] = 0;
-//                }
-            }else {
-                a[j] = a[j] + 1;
+    public static void main(String[] args) {
+       // int[] a = {4, 3, 2, 2};
+        int[] a = {4, 3, 2, 9};
+        int[] b = null;
+        if (a[a.length - 1] == 9) {
+            b = new int[a.length + 1];
+            for (int j = 0; j < a.length; j++) {
+                if (j != a.length - 1) {
+                    b[j] = a[j];
+                } else {
+                    if (a[j] == 9) {
+                        b[j] = 1;
+                        b[j + 1] = 0;
+                    } else {
+                        b[j] = a[j] + 1;
+                    }
+                }
+            }
+        } else {
+            b = new int[a.length];
+            for (int j = 0; j < a.length; j++) {
+                if (j != a.length - 1) {
+                    b[j] = a[j];
+                } else {
+                    b[j] = a[j] + 1;
+                }
             }
         }
 
-        System.out.println(Arrays.toString(a));
+        System.out.println(Arrays.toString(b));
+
+        //alternate
+
     }
 }

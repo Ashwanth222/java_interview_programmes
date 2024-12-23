@@ -17,10 +17,20 @@ public class FactorialOfANumber {
              System.out.println(num);
 
              //alternate
+        int fact1 = 1;
         for(int i = 6; i>0; i--){
-            fact = fact*i;
+            fact1 = fact1*i;
         }
-        System.out.println(fact);
+        System.out.println(fact1);
+
+        //alternate
+        //alternate
+        int num1 = 6;
+        int factorial = 1;
+        for(int i = 1; i<num1+1; i++){
+            factorial = factorial*i;
+        }
+        System.out.println(factorial);
 
     }
 }

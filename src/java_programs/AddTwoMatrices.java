@@ -1,6 +1,7 @@
 package java_programs;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class AddTwoMatrices {
     public static void main(String[] args){
@@ -14,7 +15,7 @@ public class AddTwoMatrices {
             }
         }
 
-       Arrays.stream(result).forEach(i -> System.out.println(i));
+       Arrays.stream(result).forEach(System.out::println);
 
         for(int[] row : result) {
             for (int column : row) {

@@ -44,5 +44,34 @@ public class Bubble_sort {
             }
         }
         System.out.println(Arrays.toString(arr1));
+
+
+        //alternate
+        //descending order
+        int arr2[] ={3,60,35,2,45,320,5};
+        for(int i = 0; i<arr2.length;i++){
+            for(int j = i; j<arr2.length;j++){
+                if(arr2[i] < arr2[j]) {
+                    temp = arr2[i];
+                    arr2[i] = arr2[j];
+                    arr2[j] = temp;
+                }
+            }
+        }
+        System.out.println("arr2 --> " + Arrays.toString(arr2));
+
+
+        //Ascending order
+        int arr3[] ={3,60,35,2,45,320,5};
+        for(int i = 0; i<arr3.length;i++){
+            for(int j = i; j<arr3.length;j++){
+                if(arr3[i] > arr3[j]) {
+                    temp = arr3[i];
+                    arr3[i] = arr3[j];
+                    arr3[j] = temp;
+                }
+            }
+        }
+        System.out.println("arr3 --> " + Arrays.toString(arr3));
     }
 }

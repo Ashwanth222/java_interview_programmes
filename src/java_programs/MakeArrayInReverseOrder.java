@@ -20,6 +20,7 @@ public class MakeArrayInReverseOrder {
         }
         System.out.println(Arrays.toString(arr));
 
+        //alternate
         List<Integer> list = new ArrayList<>();
         Arrays.stream(arr).boxed().forEach(e -> list.add(e));
         Collections.reverseOrder();

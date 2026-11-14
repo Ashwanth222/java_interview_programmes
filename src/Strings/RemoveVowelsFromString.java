@@ -17,6 +17,21 @@ public class RemoveVowelsFromString {
 
         System.out.println(newInputString);
 
-        sc.close();
+        //sc.close();
+
+        //alternate
+        String s = "qwertyuiufdsdfghjkmnbvcx";
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i < s.length(); i++){
+            if(s.charAt(i) == 'i' || s.charAt(i) == 'a' || s.charAt(i) == 'e'
+                    || s.charAt(i) == 'o' | s.charAt(i) == 'u' ){
+                System.out.println("Vowel: " + s.charAt(i));
+
+            }
+            else {
+                sb.append(s.charAt(i));
+            }
+        }
+        System.out.println(sb.toString());
     }
 }

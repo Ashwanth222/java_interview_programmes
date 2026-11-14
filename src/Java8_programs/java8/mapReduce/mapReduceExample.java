@@ -19,28 +19,28 @@ public class mapReduceExample {
         System.out.println(sum);
 
         int sum1 = numbers.stream().mapToInt(i -> i).sum();
-        System.out.println(sum1);
+        System.out.println("sum1 " + sum1);
 
         Integer reduceSum = numbers.stream().reduce(0, (a, b) -> a + b);
-        System.out.println(reduceSum);
+        System.out.println("reduceSum " + reduceSum);
 
         Optional<Integer> reduceSumWithMethodReference = numbers.stream().reduce(Integer::sum);
-        System.out.println(reduceSumWithMethodReference.get());
+        System.out.println("reduceSumWithMethodReference.get() " + reduceSumWithMethodReference.get());
 
         Integer mulResult = numbers.stream().reduce(1, (a, b) -> a * b);
-        System.out.println(mulResult);
+        System.out.println("mulResult " + mulResult);
 
         Integer maxvalue = numbers.stream().reduce(0, (a, b) -> a > b ? a : b);
-        System.out.println(maxvalue);
+        System.out.println("maxvalue " + maxvalue);
 
         Integer maxvalueWithMethodReference = numbers.stream().reduce(Integer::max).get();
-        System.out.println(maxvalueWithMethodReference);
+        System.out.println("maxvalueWithMethodReference " + maxvalueWithMethodReference);
 
 
         String longestString = words.stream()
                 .reduce((word1, word2) -> word1.length() > word2.length() ? word1 : word2)
                 .get();
-        System.out.println(longestString);
+        System.out.println("longestString " + longestString);
 
 
 List<Employee> employees =  Stream.of(new Employee(101,"john","A",60000),

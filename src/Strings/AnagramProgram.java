@@ -3,8 +3,7 @@ package Strings;
 import java.util.Arrays;
 
 public class AnagramProgram {
-    static void isAnagram(String s1, String s2)
-    {
+    static void isAnagram(String s1, String s2) {
         //Removing all white spaces from s1 and s2
 
         String copyOfs1 = s1.replaceAll("\\s", "");
@@ -15,14 +14,11 @@ public class AnagramProgram {
 
         boolean status = true;
 
-        if(copyOfs1.length() != copyOfs2.length())
-        {
+        if (copyOfs1.length() != copyOfs2.length()) {
             //Setting status as false if copyOfs1 and copyOfs2 doesn't have same length
 
             status = false;
-        }
-        else
-        {
+        } else {
             //Changing the case of characters of both copyOfs1 and copyOfs2 and converting them to char array
 
             char[] s1Array = copyOfs1.toLowerCase().toCharArray();
@@ -42,18 +38,14 @@ public class AnagramProgram {
 
         //Output
 
-        if(status)
-        {
-            System.out.println(s1+" and "+s2+" are anagrams");
-        }
-        else
-        {
-            System.out.println(s1+" and "+s2+" are not anagrams");
+        if (status) {
+            System.out.println(s1 + " and " + s2 + " are anagrams");
+        } else {
+            System.out.println(s1 + " and " + s2 + " are not anagrams");
         }
     }
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         isAnagram("Mother In Law", "Hitler Woman");
 
         isAnagram("keEp", "peeK");
@@ -71,6 +63,37 @@ public class AnagramProgram {
         isAnagram("Toss", "Shot");
 
         isAnagram("joy", "enjoy");
+
+
+        //alternate
+        String s1 = "Mother In Law";
+        String s2 = "Hitler Woman1";
+
+        boolean isAnagram = true;
+
+        s1 = s1.replaceAll("\\s+", "").toLowerCase();
+        s2 = s2.replaceAll("\\s+", "").toLowerCase();
+
+        if (s1.length() != s2.length()) {
+            isAnagram = false;
+        } else {
+
+            int[] count = new int[256];
+
+            for (int i = 0; i < s1.length(); i++) {
+                count[s1.charAt(i)]++;
+                count[s2.charAt(i)]--;
+            }
+
+            for (int value : count) {
+                if (value != 0) {
+                    isAnagram = false;
+                    break;
+                }
+            }
+        }
+
+        System.out.println("Is Anagram: " + isAnagram);
     }
 
 }

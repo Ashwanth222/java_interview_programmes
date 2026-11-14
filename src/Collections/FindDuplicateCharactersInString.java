@@ -1,6 +1,6 @@
 package Collections;
 
-public class FindDublicateCharactersInString {
+public class FindDuplicateCharactersInString {
     public static void main(String[] args) {
         String string1 = "Great responsibility";
         int count;

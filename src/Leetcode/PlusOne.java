@@ -66,7 +66,5 @@ public class PlusOne {
 
         System.out.println(Arrays.toString(b));
 
-        //alternate
-
     }
 }

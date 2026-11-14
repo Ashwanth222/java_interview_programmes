@@ -17,5 +17,11 @@ public class ReverseSentenceWorByWord {
 
         StringBuffer sb3 = new StringBuffer(s1).reverse();
         System.out.println(sb3);                                //method  3
+
+        String st = "";
+        for(int i = s1.length()-1; i>= 0; i--){
+            st = st + s1.charAt(i);
+        }
+        System.out.println("st : " + st);
     }
 }

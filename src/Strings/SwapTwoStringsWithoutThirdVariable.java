@@ -36,5 +36,15 @@ public class SwapTwoStringsWithoutThirdVariable {
         System.out.println("s1 : "+s1);
 
         System.out.println("s2 : "+s2);
+
+        //alternate
+        String s = "qwerty";
+        String k = "poiuyt";
+        String l = s + k;
+
+        String s3 = l.substring(k.length(), l.length());
+        String s4 = l.substring(0, s.length());
+        System.out.println("s3 " + s3);
+        System.out.println("s4 " + s4);
     }
 }

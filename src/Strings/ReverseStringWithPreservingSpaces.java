@@ -78,5 +78,27 @@ public class ReverseStringWithPreservingSpaces {
             }
         }
         System.out.println(sb);
+
+
+        //alternate
+        String str = "hi how are you";
+        String reversedChars = new StringBuilder(
+                str.replaceAll("\\s", ""))
+                .reverse()
+                .toString();
+
+        StringBuilder result = new StringBuilder();
+
+        int index = 0;
+
+        for (char ch : str.toCharArray()) {
+            if (Character.isWhitespace(ch)) {
+                result.append(' ');
+            } else {
+                result.append(reversedChars.charAt(index++));
+            }
+        }
+
+        System.out.println(result.toString());
     }
 }

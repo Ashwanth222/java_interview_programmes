@@ -25,5 +25,17 @@ public class MakeArrayInReverseOrder {
         Arrays.stream(arr).boxed().forEach(e -> list.add(e));
         Collections.reverseOrder();
         System.out.println(list);
+
+        //alternate
+        int [] ar = {1,2,5,3,9};
+        int temp1 = 0;
+        int k = 0;
+        for(int i = ar.length-1; i>ar.length/2; i--){
+            temp1 = ar[k];
+            ar[k] = ar[i];
+            ar[i] = temp1;
+            k++;
+        }
+        System.out.println(Arrays.toString(ar));
     }
 }

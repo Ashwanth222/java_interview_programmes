@@ -26,5 +26,22 @@ public class FindTheNearestPerfectSquareRootOfANumber {
         long res=(p<q) ? (i-r):(i+r);
         System.out.println(res);
         System.out.println("Nearest perfect number is:" + Math.round(Math.sqrt(res)));
+
+        //alternate
+        int num = 39;
+
+        int lower = (int) Math.floor(Math.sqrt(num));
+        int upper = lower + 1;
+
+        int lowerSquare = lower * lower;
+        int upperSquare = upper * upper;
+
+        int nearestSquare =
+                (num - lowerSquare <= upperSquare - num)
+                        ? lowerSquare
+                        : upperSquare;
+
+        System.out.println("Nearest Perfect Square = " + nearestSquare);
+        System.out.println("Square Root = " + (int)Math.sqrt(nearestSquare));
     }
 }

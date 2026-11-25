@@ -36,5 +36,18 @@ public class ContainsDublicate {
       Set<Integer> noDublicates =  integerList.stream().collect(Collectors.toSet());  //method3
         System.out.println(noDublicates);
 
+        //ALTERNATE
+        boolean hasDuplicates =
+                integerList.size() != integerList.stream().distinct().count();
+
+        System.out.println(hasDuplicates);
+
+        //alternate
+        boolean hasDuplicates1 =
+                integerList.size() != new HashSet<>(integerList).size();
+
+        System.out.println(hasDuplicates1);
+
+
     }
 }

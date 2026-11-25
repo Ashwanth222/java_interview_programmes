@@ -20,8 +20,13 @@ public class FindThreeMaximumAndThreeMinimumFromList {
         System.out.println("-----------------");
 
         listOfIntegers.stream().sorted().limit(3).forEach(System.out::println);
+        System.out.println("--------");
 
-        //3 Maximum Numbers
+        //max 3 numbers
+        listOfIntegers.stream()
+                .sorted()
+                .skip(listOfIntegers.size() - 3)
+                .forEach(System.out::println);        //3 Maximum Numbers
 
         System.out.println("-----------------");
 

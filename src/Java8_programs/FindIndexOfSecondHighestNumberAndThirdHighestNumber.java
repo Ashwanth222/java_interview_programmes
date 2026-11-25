@@ -21,5 +21,40 @@ public class FindIndexOfSecondHighestNumberAndThirdHighestNumber {
         System.out.println(thirdHighest);
         System.out.println(numbers.indexOf(secondHighest));
         System.out.println(numbers.indexOf(thirdHighest));
+
+        //alternate
+        List<Integer> sorted = numbers.stream()
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+
+        int secondHighest1 = sorted.get(1);
+        int thirdHighest1 = sorted.get(2);
+
+        System.out.println("Second Highest = " + secondHighest1 +
+                ", Index = " + numbers.indexOf(secondHighest1));
+
+        System.out.println("Third Highest = " + thirdHighest1 +
+                ", Index = " + numbers.indexOf(thirdHighest1));
+
+        //alternate
+        List<Integer> numberss = Arrays.asList(4, 7, 9, 2, 8, 3, 5);
+
+        numberss.stream()
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .skip(1)
+                .limit(2)
+                .forEach(System.out::println);
+
+        //alternate
+        List<Integer> top3 = numbers.stream()
+                .distinct()
+                .sorted(Comparator.reverseOrder())
+                .limit(3)
+                .collect(Collectors.toList());
+
+        System.out.println("Second Highest : " + top3.get(1));
+        System.out.println("Third Highest : " + top3.get(2));
     }
 }

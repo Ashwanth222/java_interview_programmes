@@ -58,5 +58,34 @@ public class findIntersection {
                 Arrays.stream(inputArray4).collect(Collectors.toList()))
                 .stream().flatMap(List::stream).forEach(e -> set.add(e));
         System.out.println(set);
+
+        //alternate
+        Set<Integer> intersection =
+                Arrays.stream(inputArray1)
+                        .filter(num ->
+                                Arrays.asList(inputArray2).contains(num) &&
+                                        Arrays.asList(inputArray3).contains(num) &&
+                                        Arrays.asList(inputArray4).contains(num))
+                        .collect(Collectors.toSet());
+
+        System.out.println(intersection);
+
+        //alternate
+        Set<Integer> result = new HashSet<>(Arrays.asList(inputArray1));
+
+        result.retainAll(Arrays.asList(inputArray2));
+        result.retainAll(Arrays.asList(inputArray3));
+        result.retainAll(Arrays.asList(inputArray4));
+
+        System.out.println(result);
+
+        //Union Using flatMap()
+        Set<Integer> union =
+                Arrays.asList(inputArray1, inputArray2, inputArray3, inputArray4)
+                        .stream()
+                        .flatMap(Arrays::stream)
+                        .collect(Collectors.toSet());
+
+        System.out.println(union);
     }
 }
